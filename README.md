@@ -66,11 +66,11 @@ One-time setup, about 10 minutes:
    Secrets > Add > name `RESEND_API_KEY`, type **Secret**, paste the key. Save, then
    redeploy (Deployments > Retry, or just push any commit).
 
-That's it. Submissions arrive at **info@phoenixsolutions.com** with the customer's address
+That's it. Submissions arrive at **info@phoenix-solutionsuk.com** with the customer's address
 as Reply-To, so replying goes straight to them.
 
 Optional variables (same place, plain text):
-- `TO_EMAIL` - override the destination inbox (default `info@phoenixsolutions.com`)
+- `TO_EMAIL` - override the destination inbox (default `info@phoenix-solutionsuk.com`)
 - `FROM_EMAIL` - override the sender (default `Phoenix Solutions Website <quotes@phoenix-solutionsuk.com>`;
   the domain part must match the domain verified in Resend)
 

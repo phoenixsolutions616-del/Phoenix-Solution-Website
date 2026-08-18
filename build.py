@@ -27,17 +27,13 @@ HEADER = """<!DOCTYPE html>
 <header class="site-header">
   <div class="topbar">
     <div class="wrap">
-      <div><a href="tel:+447460060032">+44 7460 060032</a> &nbsp;·&nbsp; <a href="mailto:info@phoenixsolutions.com">info@phoenixsolutions.com</a></div>
-      <div class="accred">NICEIC Platinum · OZEV Authorised · MCS Certified · Tesla Powerwall Certified</div>
+      <div><a href="tel:+447460060032">+44 7460 060032</a> &nbsp;·&nbsp; <a href="mailto:info@phoenix-solutionsuk.com">info@phoenix-solutionsuk.com</a></div>
+      <div class="accred">NAPIT Approved · OZEV Authorised · MCS Certified · Tesla Powerwall Certified</div>
     </div>
   </div>
   <div class="wrap navbar">
     <a class="logo" href="index.html" aria-label="Phoenix Solutions home">
-      __LOGO__
-      <span class="logo-text">
-        <span class="l1">PHO<span class="ebar" aria-hidden="true"></span>NIX</span>
-        <span class="l2">SOLUTIONS</span>
-      </span>
+      <img src="images/logos/{logo}-dark.png" alt="{logo_alt}" width="180" height="97">
     </a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <ul class="nav-links">
@@ -79,15 +75,11 @@ FOOTER = """</main>
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="logo" href="index.html" aria-label="Phoenix Solutions home">
-          __LOGO__
-          <span class="logo-text">
-            <span class="l1">PHO<span class="ebar" aria-hidden="true"></span>NIX</span>
-            <span class="l2">SOLUTIONS</span>
-          </span>
+          <img src="images/logos/{logo}-dark.png" alt="{logo_alt}" width="180" height="97" loading="lazy">
         </a>
         <p>Electrical engineering for the way we live now, EV charging, solar energy, smart buildings and certified compliance, delivered across London and the South East.</p>
         <div class="footer-accreds">
-          <span>NICEIC Platinum</span><span>OZEV Authorised</span><span>MCS Certified</span><span>Tesla Powerwall</span>
+          <span>NAPIT Approved</span><span>OZEV Authorised</span><span>MCS Certified</span><span>Tesla Powerwall</span>
         </div>
       </div>
       <div>
@@ -115,7 +107,7 @@ FOOTER = """</main>
         <ul>
           <li>Flat 17 Bron Court, Brondesbury Road,<br>London NW6 6AU</li>
           <li><a href="tel:+447460060032">+44 7460 060032</a></li>
-          <li><a href="mailto:info@phoenixsolutions.com">info@phoenixsolutions.com</a></li>
+          <li><a href="mailto:info@phoenix-solutionsuk.com">info@phoenix-solutionsuk.com</a></li>
           <li>Mon-Fri 8:00-18:00 · Sat 9:00-14:00</li>
           <li>24/7 emergency call-out for existing clients</li>
         </ul>
@@ -134,7 +126,7 @@ FOOTER = """</main>
 
 PAGES = {
   "index.html": dict(title="Phoenix Solutions | Electrical Engineering, EV Charging, Solar & Smart Buildings, London",
-      desc="NICEIC Platinum electrical contractors in London. EV charger installation, solar PV and battery storage, smart home technology, EICR reports, fuse box upgrades and fire safety systems.",
+      desc="NAPIT approved electrical contractors in London. EV charger installation, solar PV and battery storage, smart home technology, EICR reports, fuse box upgrades and fire safety systems.",
       theme="", active="home",
       cta_h="Ready to power your next project?",
       cta_p="Tell us what you need and we'll come back within one working day with a clear, fixed-price quotation."),
@@ -163,13 +155,13 @@ PAGES = {
       theme="", active="projects",
       cta_h="Your project could be next.",
       cta_p="From a single home charger to a full commercial fit-out, tell us what you're planning and we'll price it properly."),
-  "about.html": dict(title="About Phoenix Solutions | NICEIC Platinum Electrical Engineers, London",
+  "about.html": dict(title="About Phoenix Solutions | NAPIT Approved Electrical Engineers, London",
       desc="Phoenix Solutions is a London electrical engineering company led by CEO Rabih Srour, specialising in EV charging, solar energy, smart buildings and electrical compliance.",
       theme="", active="about",
       cta_h="Work with engineers who sweat the details.",
       cta_p="Every job certified, every cable clipped straight, every client called back. That's the Phoenix standard."),
   "contact.html": dict(title="Contact Phoenix Solutions | London Electrical Contractors",
-      desc="Contact Phoenix Solutions: call +44 7460 060032, email info@phoenixsolutions.com or visit us at Bron Court, Brondesbury Road, London NW6 6AU.",
+      desc="Contact Phoenix Solutions: call +44 7460 060032, email info@phoenix-solutionsuk.com or visit us at Bron Court, Brondesbury Road, London NW6 6AU.",
       theme="", active="contact",
       cta_h="Prefer a fixed price in writing?",
       cta_p="Use our quote form and we'll respond within one working day with a clear, itemised quotation."),
@@ -186,6 +178,11 @@ PAGES = {
 }
 
 def build():
+    LOGOS = {
+        "ev-charging.html": ("ev", "Phoenix EV"),
+        "solar.html": ("solar", "Phoenix Solar"),
+        "smart-home.html": ("smart", "Phoenix Smart"),
+    }
     for fname, meta in PAGES.items():
         body_path = os.path.join(BODIES, fname)
         with open(body_path) as f:
@@ -195,8 +192,11 @@ def build():
             key = "a_" + meta["active"]
             if key in act:
                 act[key] = ' class="active"'
-        head = HEADER.format(title=meta["title"], desc=meta["desc"], theme=meta["theme"], **act)
-        foot = FOOTER.format(cta_h=meta["cta_h"], cta_p=meta["cta_p"])
+        logo, logo_alt = LOGOS.get(fname, ("main", "Phoenix Solutions"))
+        head = HEADER.format(title=meta["title"], desc=meta["desc"], theme=meta["theme"],
+                             logo=logo, logo_alt=logo_alt, **act)
+        foot = FOOTER.format(cta_h=meta["cta_h"], cta_p=meta["cta_p"],
+                             logo=logo, logo_alt=logo_alt)
         html = (head + body + foot).replace("__LOGO__", LOGO_SVG)
         with open(os.path.join(SITE, fname), "w") as f:
             f.write(html)
