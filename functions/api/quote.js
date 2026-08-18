@@ -7,12 +7,12 @@
  * Required environment variables (set in Cloudflare Pages > Settings >
  * Variables and Secrets):
  *   RESEND_API_KEY  - secret. API key from resend.com with "Sending" access
- *   TO_EMAIL        - optional. Defaults to info@phoenixsolutions.com
+ *   TO_EMAIL        - optional. Defaults to info@phoenix-solutionsuk.com
  *   FROM_EMAIL      - optional. Defaults to quotes@phoenix-solutionsuk.com
  *                     (the domain part must be verified in Resend)
  */
 
-const DEFAULT_TO = "info@phoenixsolutions.com";
+const DEFAULT_TO = "info@phoenix-solutionsuk.com";
 const DEFAULT_FROM = "Phoenix Solutions Website <quotes@phoenix-solutionsuk.com>";
 const MAX_FILES = 6;
 const MAX_TOTAL_BYTES = 15 * 1024 * 1024; // 15 MB across all attachments
