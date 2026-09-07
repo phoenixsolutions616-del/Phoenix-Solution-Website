@@ -82,3 +82,7 @@ Notes:
   becomes a problem, Cloudflare Turnstile can be added to the form - ask your developer.
 - Attachment limit: 6 files / 15 MB total per submission; anything above is skipped and
   noted in the email.
+
+## Image credits
+- `images/rewire-ceiling.jpg`: "Electrician at work" by Sid Mbog, CC BY-SA 4.0, via Wikimedia Commons (https://commons.wikimedia.org/w/index.php?curid=147740731). Resized.
+- `images/fuse-board.jpg`: "Fuse box after finishing" by Dmitry G, CC BY-SA 3.0, via Wikimedia Commons (https://commons.wikimedia.org/w/index.php?curid=11768173). Resized.
