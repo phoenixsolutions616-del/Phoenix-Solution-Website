@@ -48,6 +48,13 @@ private preview URL instead of touching the live site.
   header/footer/CTA band. After editing a body, run `python3 build.py` to regenerate,
   then commit both the body and the rebuilt .html files.
 - You can also edit the built .html files directly if you prefer; they are self-contained.
+  If you do, copy the same change into the matching file in `bodies/`, otherwise the next
+  `python3 build.py` run will overwrite it.
+- **After any change to `css/styles.css` or `js/main.js`, run `python3 build.py` and commit
+  the rebuilt pages.** `_headers` tells Cloudflare and browsers to cache those two files for a
+  year, so the build stamps a content hash onto every `styles.css?v=...` / `main.js?v=...`
+  link. Without a rebuild, returning visitors keep the old CSS/JS and new styles (for example
+  the WhatsApp button) will not appear for them.
 - Images live in `images/` (optimised JPEGs extracted from the client's asset PDFs).
 
 ## Quote form email (already wired)
