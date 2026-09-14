@@ -30,11 +30,11 @@ Attribution is not required by the licence but is listed here as a courtesy.
 ## EV charging page
 
 | File | Used for | Photographer | Unsplash ID |
-|---|---|---|---|
+
 | ev-hub-carpark.jpg | "2-40 bays per site" figure | Ratio EV Charging | t8GBooTqq3k |
 
 ## Smart home page
 
 | File | Used for | Photographer | Unsplash ID |
-|---|---|---|---|
+
 | smart-hero.jpg | Page hero | HUUM | vJPr5tORR8c |
