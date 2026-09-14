@@ -26,3 +26,15 @@ Attribution is not required by the licence but is listed here as a courtesy.
 | about-hero.jpg | Page hero | Toolmash Expo | PkHf7BUWbtk |
 | about-team.jpg | "Why the phoenix?" figure | colsan ltda | LMb98OOtoYU |
 | about-integrated.jpg | "Where our four services meet" figure | Andersen EV | A0L8U-GTL-8 |
+
+## EV charging page
+
+| File | Used for | Photographer | Unsplash ID |
+
+| ev-hub-carpark.jpg | "2-40 bays per site" figure | Ratio EV Charging | t8GBooTqq3k |
+
+## Smart home page
+
+| File | Used for | Photographer | Unsplash ID |
+
+| smart-hero.jpg | Page hero | HUUM | vJPr5tORR8c |
