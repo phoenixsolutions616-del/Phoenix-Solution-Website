@@ -38,3 +38,9 @@ Attribution is not required by the licence but is listed here as a courtesy.
 | File | Used for | Photographer | Unsplash ID |
 
 | smart-hero.jpg | Page hero | HUUM | vJPr5tORR8c |
+
+## Maintenance page
+
+| File | Used for | Photographer | Unsplash ID |
+|---|---|---|---|
+| maint-eicr-tester.jpg | EICR section figure | Mark Kats | _u95HlNoz68 |
