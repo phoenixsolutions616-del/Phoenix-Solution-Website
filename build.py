@@ -27,14 +27,20 @@ HEADER = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css?v={css_v}">
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="%231A1A1A"/><path d="M20 6C17.5 10 13.5 12 11 12c3.3 1.6 5.8 1.6 8.3.8-1.6 2.5-5 4.1-8.3 4.1 4.1 1.6 7.5.8 10-1-0.8 4.1-4.1 7.5-7.5 8.3 5 0 8.3-2.5 10-5.8.8 5-.8 9.1-4.1 12.4 5-2.5 7.5-6.6 7.5-11.6 1.6 2.5 1.6 5.8.8 8.3 2.5-3.3 3.3-7.5 1.6-11.6 2.5.8 4.1 2.5 5 5 0-4.1-1.6-7.5-5-10 2.5-.8 4.1-.8 6.6 0-2.5-2.5-5.8-3.3-9.1-2.5.8-2.5 2.5-4.1 5-5-4.1 0-7.5 2.5-9.1 5.8-.8-2.5-.8-4.1 0-5.8z" fill="%23FF6A00"/></svg>'>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#1A1A1A">
 </head>
 <body{theme}>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="topbar">
     <div class="wrap">
-      <div><a href="tel:+447503728619">+44 (0)7503 728619</a> &nbsp;·&nbsp; <a href="mailto:info@phoenix-solutionsuk.com">info@phoenix-solutionsuk.com</a></div>
+      <div><a href="tel:+447440057920">+44 (0)7440 057920</a> &nbsp;·&nbsp; <a href="mailto:info@phoenix-solutionsuk.com">info@phoenix-solutionsuk.com</a></div>
       <div class="accred">NAPIT Approved Contractor · BS 7671:2018 (18th Edition) · £5m Public Liability Insurance</div>
     </div>
   </div>
@@ -73,7 +79,7 @@ FOOTER = """</main>
     </div>
     <div style="display:flex;gap:14px;flex-wrap:wrap">
       <a class="btn btn-white" href="quote.html">Request a Quote</a>
-      <a class="btn btn-ghost" href="tel:+447503728619">Call +44 (0)7503 728619</a>
+      <a class="btn btn-ghost" href="tel:+447440057920">Call +44 (0)7440 057920</a>
     </div>
   </div>
 </section>
@@ -113,7 +119,7 @@ FOOTER = """</main>
         <h4>Contact</h4>
         <ul>
           <li>Flat 17 Bron Court, Brondesbury Road,<br>London NW6 6AU</li>
-          <li><a href="tel:+447503728619">+44 (0)7503 728619</a></li>
+          <li><a href="tel:+447440057920">+44 (0)7440 057920</a></li>
           <li><a href="mailto:info@phoenix-solutionsuk.com">info@phoenix-solutionsuk.com</a></li>
           <li>Mon-Fri 8:00-18:00 · Sat 9:00-14:00</li>
           <li>24/7 emergency call-out for existing clients</li>
@@ -126,7 +132,7 @@ FOOTER = """</main>
     </div>
   </div>
 </footer>
-<a class="whatsapp-fab" href="https://wa.me/447503728619" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+<a class="whatsapp-fab" href="https://wa.me/447440057920" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
   <svg viewBox="0 0 32 32" width="34" height="34" aria-hidden="true" fill="currentColor"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.6.8 5.1 2.2 7.2L3.5 29l6.2-1.6a13 13 0 0 0 6.3 1.6c7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.7 1 1-3.5-.3-.4a10.4 10.4 0 0 1-1.7-5.7C5.3 10.1 10.1 5.5 16 5.5s10.7 4.6 10.7 10.3S21.9 26.4 16 26.4zm5.9-7.7c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
 </a>
 <script src="js/main.js?v={js_v}"></script>
@@ -171,7 +177,7 @@ PAGES = {
       cta_h="Work with engineers who sweat the details.",
       cta_p="Every job certified, every cable clipped straight, every client called back. That's the Phoenix standard."),
   "contact.html": dict(title="Contact Phoenix Solutions | London Electrical Contractors",
-      desc="Contact Phoenix Solutions: call +44 (0)7503 728619, email info@phoenix-solutionsuk.com or visit us at Bron Court, Brondesbury Road, London NW6 6AU.",
+      desc="Contact Phoenix Solutions: call +44 (0)7440 057920, email info@phoenix-solutionsuk.com or visit us at Bron Court, Brondesbury Road, London NW6 6AU.",
       theme="", active="contact",
       cta_h="Prefer a fixed price in writing?",
       cta_p="Use our quote form and we'll respond within one working day with a clear, itemised quotation."),
