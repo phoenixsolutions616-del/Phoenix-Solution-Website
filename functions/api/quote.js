@@ -34,8 +34,12 @@ export async function onRequestPost(context) {
     return json(400, { ok: false, error: "Could not read form data." });
   }
 
-  // Honeypot: real users never fill this hidden field.
-  if ((form.get("company") || "").toString().trim() !== "") {
+  // Honeypot: real users never fill this hidden field. The field name is
+  // deliberately meaningless so browser autofill never populates it (a
+  // field called "company" was being autofilled and dropping real leads).
+  const honeypot = (form.get("hp_extra_field") || "").toString().trim();
+  if (honeypot !== "") {
+    console.log("Honeypot triggered - submission dropped as spam", { honeypot });
     // Pretend success so bots learn nothing.
     return json(200, { ok: true });
   }
