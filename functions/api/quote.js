@@ -52,6 +52,8 @@ export async function onRequestPost(context) {
     return json(400, { ok: false, error: "Please provide a valid name and email address." });
   }
 
+  console.log("Quote request received", { name, email, services: field("services") || "Not specified" });
+
   const data = {
     services: field("services") || "Not specified",
     property_type: field("property_type"),
@@ -144,6 +146,8 @@ export async function onRequestPost(context) {
     return json(502, { ok: false, error: "The email service rejected the message. Please try again or call us." });
   }
 
+  const sent = await resp.json().catch(() => ({}));
+  console.log("Resend accepted email", { id: sent.id, to: payload.to, subject });
   return json(200, { ok: true });
 }
 
