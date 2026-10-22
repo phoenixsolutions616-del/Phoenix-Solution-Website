@@ -502,3 +502,23 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
 .whatsapp-fab:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 @media (max-width:700px){.topbar .accred{display:none}}
 @media (max-width:560px){.whatsapp-fab{right:14px;bottom:14px;width:52px;height:52px}}
+
+/* area pages: postcode districts, links to other areas, footer area row */
+.district-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.district-list li{
+  display:flex;gap:12px;align-items:baseline;
+  background:var(--white,#fff);border:1px solid rgba(26,26,26,.08);border-radius:12px;padding:12px 16px;
+  font-size:14.5px;color:var(--ink-soft);
+}
+.district-list li strong{flex:0 0 44px;font-family:var(--head);color:var(--sub)}
+.area-links{display:flex;flex-wrap:wrap;gap:10px}
+.area-links a{
+  display:inline-block;padding:10px 16px;border-radius:999px;
+  border:1px solid rgba(26,26,26,.14);color:var(--charcoal);text-decoration:none;font-weight:500;font-size:14.5px;
+}
+.area-links a:hover{border-color:var(--sub);color:var(--sub)}
+.footer-areas{
+  border-top:1px solid rgba(255,255,255,.08);margin-top:28px;padding-top:18px;
+  font-size:13.5px;line-height:1.9;color:#a8a8a8;
+}
+.footer-areas strong{color:#e0e0e0;margin-right:6px}

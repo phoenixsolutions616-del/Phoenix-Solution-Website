@@ -34,6 +34,7 @@ HEADER = """<!DOCTYPE html>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#1A1A1A">
+<script type="application/ld+json">{{"@context": "https://schema.org", "@type": "Electrician", "name": "Phoenix Solutions Ltd", "url": "https://phoenix-solutionsuk.com/", "telephone": "+447440057920", "email": "info@phoenix-solutionsuk.com", "image": "https://phoenix-solutionsuk.com/images/logos/main-dark.png", "address": {{"@type": "PostalAddress", "streetAddress": "Flat 17 Bron Court, Brondesbury Road", "addressLocality": "London", "postalCode": "NW6 6AU", "addressCountry": "GB"}}, "openingHoursSpecification": [{{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}}, {{"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00"}}], "areaServed": [{{"@type": "Place", "name": "North London (N postcodes N1 to N22)"}}, {{"@type": "Place", "name": "North West London (NW postcodes NW1 to NW11)"}}, {{"@type": "Place", "name": "Enfield, Barnet & Broxbourne (EN postcodes EN1 to EN11)"}}, {{"@type": "Place", "name": "Harrow, Wembley & Ruislip (HA postcodes HA0 to HA9)"}}, {{"@type": "Place", "name": "Watford, Bushey & South West Hertfordshire (WD postcodes WD3 to WD25)"}}, {{"@type": "Place", "name": "St Albans, Harpenden & Welwyn Hatfield (AL postcodes AL1 to AL10)"}}], "knowsAbout": ["EV charger installation", "Consumer unit upgrades", "Fuse box upgrades", "Electrical rewiring", "Electrical installation", "EICR", "Electrical safety certificates", "Solar PV", "Battery storage"], "memberOf": {{"@type": "Organization", "name": "NAPIT"}}}}</script>
 </head>
 <body{theme}>
 <a class="skip" href="#main">Skip to content</a>
@@ -58,8 +59,12 @@ HEADER = """<!DOCTYPE html>
           <li><a href="solar.html"><span class="dot dot-solar"></span>Solar &amp; Battery, Phoenix Solar</a></li>
           <li><a href="smart-home.html"><span class="dot dot-smart"></span>Smart Home, Phoenix Smart</a></li>
           <li><a href="maintenance.html"><span class="dot dot-maint"></span>Compliance &amp; Maintenance</a></li>
+          <li><a href="consumer-unit-upgrade.html"><span class="dot dot-maint"></span>Fuse Box Upgrades</a></li>
+          <li><a href="rewiring.html"><span class="dot dot-maint"></span>Electrical Rewiring</a></li>
+          <li><a href="eicr.html"><span class="dot dot-maint"></span>EICR Certificates</a></li>
         </ul>
       </li>
+      <li><a href="areas.html"{a_areas}>Areas</a></li>
       <li><a href="projects.html"{a_projects}>Projects</a></li>
       <li><a href="about.html"{a_about}>About</a></li>
       <li><a href="contact.html"{a_contact}>Contact</a></li>
@@ -101,8 +106,9 @@ FOOTER = """</main>
           <li><a href="ev-charging.html">EV Charger Installation</a></li>
           <li><a href="solar.html">Solar PV &amp; Battery Storage</a></li>
           <li><a href="smart-home.html">Smart Home Technology</a></li>
-          <li><a href="maintenance.html">EICR Reports &amp; Certificates</a></li>
-          <li><a href="maintenance.html#fusebox">Fuse Box Upgrades</a></li>
+          <li><a href="eicr.html">EICR Reports &amp; Certificates</a></li>
+          <li><a href="consumer-unit-upgrade.html">Fuse Box Upgrades</a></li>
+          <li><a href="rewiring.html">Electrical Rewiring</a></li>
           <li><a href="maintenance.html#fire">Fire Alarms &amp; Emergency Lighting</a></li>
         </ul>
       </div>
@@ -126,6 +132,7 @@ FOOTER = """</main>
         </ul>
       </div>
     </div>
+    <div class="footer-areas"><strong>Areas we cover:</strong> <a href="electrician-north-london.html">North London (N)</a> · <a href="electrician-north-west-london.html">North West London (NW)</a> · <a href="electrician-enfield-barnet.html">Enfield, Barnet &amp; Broxbourne (EN)</a> · <a href="electrician-harrow-wembley.html">Harrow, Wembley &amp; Ruislip (HA)</a> · <a href="electrician-watford.html">Watford, Bushey &amp; South West Hertfordshire (WD)</a> · <a href="electrician-st-albans.html">St Albans, Harpenden &amp; Welwyn Hatfield (AL)</a></div>
     <div class="footer-bottom">
       <div>© <span id="year"></span> Phoenix Solutions Ltd. All rights reserved.</div>
       <div>Registered in England &amp; Wales · phoenix-solutionsuk.com</div>
@@ -186,6 +193,56 @@ PAGES = {
       theme="", active="quote",
       cta_h="Not sure what you need yet?",
       cta_p="Call us for a no-obligation chat, we'll help you scope the job before you commit to anything."),
+  "consumer-unit-upgrade.html": dict(title="Fuse Box & Consumer Unit Upgrades | Certified Electricians, London & Herts | Phoenix",
+      desc="Fuse box and consumer unit upgrades from £550 fitted: RCBO on every circuit, surge protection, full testing and certification by NAPIT approved electricians. Most done in half a day.",
+      theme=' data-theme="maintenance"', active="services",
+      cta_h="Swap the old fuse box for peace of mind.",
+      cta_p="Send us a photo of your fuse box and we'll come back with a fixed, certified price within one working day."),
+  "rewiring.html": dict(title="House Rewiring & Electrical Rewiring | Full & Partial Rewires | Phoenix Solutions",
+      desc="Full and partial electrical rewiring by NAPIT approved electricians across North London and Hertfordshire. Fixed price after survey, room-by-room planning, EIC certificate and Building Control notification.",
+      theme=' data-theme="maintenance"', active="services",
+      cta_h="Planning a rewire?",
+      cta_p="Book a survey and we'll test what you have, plan the circuits with you and give you a fixed price in writing."),
+  "eicr.html": dict(title="EICR & Electrical Safety Certificates for Landlords & Homeowners | Phoenix Solutions",
+      desc="EICR electrical safety certificates from £190 for 1-3 bed homes. Landlord EICRs every 5 years, honest coding, photos of every observation and digital certificates usually within 24 hours.",
+      theme=' data-theme="maintenance"', active="services",
+      cta_h="Need an EICR this month?",
+      cta_p="Tell us the property and the deadline and we'll book you in, with your certificate usually issued within 24 hours of the visit."),
+  "areas.html": dict(title="Areas We Cover | Electricians & EV Charger Installers in North London & Hertfordshire",
+      desc="Phoenix Solutions covers N, NW, EN, HA, WD and AL postcodes: EV charger installation, fuse box upgrades, rewiring and EICR certificates by NAPIT approved electricians.",
+      theme="", active="areas",
+      cta_h="In one of our areas?",
+      cta_p="Send us your postcode and what you need, and we'll come back with a fixed price within one working day."),
+  "electrician-north-london.html": dict(title="Electrician & EV Charger Installation in North London (N N1-N22) | Phoenix Solutions",
+      desc="NAPIT approved electricians in North London: EV charger installation (Ohme, Hypervolt, Easee, Zappi, Tesla), fuse box upgrades, rewiring and EICR certificates across Islington, Highgate, Muswell Hill, Crouch End, Finchley, Southgate, Tottenham and Wood Green.",
+      theme="", active="areas",
+      cta_h="Need an electrician in North London?",
+      cta_p="Send us your postcode and a few photos and we'll come back with a fixed, written price within one working day."),
+  "electrician-north-west-london.html": dict(title="Electrician & EV Charger Installation in North West London (NW NW1-NW11) | Phoenix Solutions",
+      desc="NAPIT approved electricians in North West London: EV charger installation (Ohme, Hypervolt, Easee, Zappi, Tesla), fuse box upgrades, rewiring and EICR certificates across Camden, Hampstead, Kilburn, West Hampstead, Hendon, Mill Hill, Willesden and Golders Green.",
+      theme="", active="areas",
+      cta_h="Need an electrician in North West London?",
+      cta_p="Send us your postcode and a few photos and we'll come back with a fixed, written price within one working day."),
+  "electrician-enfield-barnet.html": dict(title="Electrician & EV Charger Installation in Enfield, Barnet & Broxbourne (EN EN1-EN11) | Phoenix Solutions",
+      desc="NAPIT approved electricians in Enfield, Barnet & Broxbourne: EV charger installation (Ohme, Hypervolt, Easee, Zappi, Tesla), fuse box upgrades, rewiring and EICR certificates across Enfield, Barnet, Cockfosters, Potters Bar, Cheshunt, Waltham Cross, Waltham Abbey and Hoddesdon.",
+      theme="", active="areas",
+      cta_h="Need an electrician in Enfield, Barnet &amp; Broxbourne?",
+      cta_p="Send us your postcode and a few photos and we'll come back with a fixed, written price within one working day."),
+  "electrician-harrow-wembley.html": dict(title="Electrician & EV Charger Installation in Harrow, Wembley & Ruislip (HA HA0-HA9) | Phoenix Solutions",
+      desc="NAPIT approved electricians in Harrow, Wembley & Ruislip: EV charger installation (Ohme, Hypervolt, Easee, Zappi, Tesla), fuse box upgrades, rewiring and EICR certificates across Harrow, Wembley, Pinner, Ruislip, Northwood, Stanmore and Edgware.",
+      theme="", active="areas",
+      cta_h="Need an electrician in Harrow, Wembley &amp; Ruislip?",
+      cta_p="Send us your postcode and a few photos and we'll come back with a fixed, written price within one working day."),
+  "electrician-watford.html": dict(title="Electrician & EV Charger Installation in Watford, Bushey & South West Hertfordshire (WD WD3-WD25) | Phoenix Solutions",
+      desc="NAPIT approved electricians in Watford, Bushey & South West Hertfordshire: EV charger installation (Ohme, Hypervolt, Easee, Zappi, Tesla), fuse box upgrades, rewiring and EICR certificates across Watford, Bushey, Borehamwood, Radlett, Rickmansworth and Kings Langley.",
+      theme="", active="areas",
+      cta_h="Need an electrician in Watford, Bushey &amp; South West Hertfordshire?",
+      cta_p="Send us your postcode and a few photos and we'll come back with a fixed, written price within one working day."),
+  "electrician-st-albans.html": dict(title="Electrician & EV Charger Installation in St Albans, Harpenden & Welwyn Hatfield (AL AL1-AL10) | Phoenix Solutions",
+      desc="NAPIT approved electricians in St Albans, Harpenden & Welwyn Hatfield: EV charger installation (Ohme, Hypervolt, Easee, Zappi, Tesla), fuse box upgrades, rewiring and EICR certificates across St Albans, Harpenden, Hatfield, Welwyn Garden City, Redbourn and London Colney.",
+      theme="", active="areas",
+      cta_h="Need an electrician in St Albans, Harpenden &amp; Welwyn Hatfield?",
+      cta_p="Send us your postcode and a few photos and we'll come back with a fixed, written price within one working day."),
   "404.html": dict(title="Page not found | Phoenix Solutions",
       desc="The page you were looking for could not be found.",
       theme="", active="",
@@ -205,7 +262,7 @@ def build():
         body_path = os.path.join(BODIES, fname)
         with open(body_path) as f:
             body = f.read()
-        act = {k: "" for k in ("a_home","a_services","a_projects","a_about","a_contact")}
+        act = {k: "" for k in ("a_home","a_services","a_projects","a_about","a_contact","a_areas")}
         if meta["active"]:
             key = "a_" + meta["active"]
             if key in act:
